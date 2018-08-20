@@ -29,12 +29,12 @@ public class SearchFace {
 		//System.setProperty("aip.log4j.conf", "path/to/your/log4j.properties");
 		HashMap<String, String> options = new HashMap<String, String>();
 	    options.put("face_field", "age");
-	    options.put("max_face_num", "2");
+	    options.put("max_face_num", "5");
 	    options.put("face_type", "LIVE");
 		// 调用接口
 		String path = "F:\\dd/me.jpg";
 		String image = Base64ImageUtils.GetImageStrFromPath(path);
-		String groupIdList = "3,2";
+		String groupIdList = "group_1";
 		JSONObject res = client.search(image, "BASE64", groupIdList, options);
 		System.out.println(res.toString(2));
 

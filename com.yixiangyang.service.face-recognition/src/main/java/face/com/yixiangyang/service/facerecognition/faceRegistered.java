@@ -19,7 +19,7 @@ public class faceRegistered {
 	public static void main(String[] args) {
 		String path = "F:\\dd/me.jpg";
 		String image = Base64ImageUtils.GetImageStrFromPath(path);
-		System.out.println(createUser("005", "group_1", image, "这个是用户信息", "append"));
+		System.out.println(createUser("007", "group_1", image, "这个是用户信息", "append"));
 	}
 
 	/**
