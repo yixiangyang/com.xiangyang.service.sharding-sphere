@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +14,10 @@ import com.yixiangyang.model.User;
 import com.yixiangyang.service.UserService;
 
 @RestController
+@RefreshScope
 public class UserController {
+	@Value("${aa}")
+	private String aa;
 	@Resource
 	private UserService userService;
 	
@@ -30,6 +35,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/v1/user",method = RequestMethod.GET)
 	public List<User> getUsersS(){
+		System.out.println("ddddddddd:"+aa);
 //		userService.addUser();
 		return userService.getSlave();
 	}

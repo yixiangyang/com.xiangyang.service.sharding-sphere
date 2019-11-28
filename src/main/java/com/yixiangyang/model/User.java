@@ -2,6 +2,7 @@ package com.yixiangyang.model;
 
 import java.util.Date;
 
+
 public class User {
 	private Integer id;
 	
@@ -10,8 +11,9 @@ public class User {
 	private Date createTime;
 	
 
-	public User(String name, Date createTime) {
+	public User(Integer id,String name, Date createTime) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.createTime = createTime;
 	}

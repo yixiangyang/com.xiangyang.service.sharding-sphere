@@ -24,12 +24,15 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public void addUser() {
-		HintManager.getInstance().setMasterRouteOnly();
+//		HintManager.getInstance().setMasterRouteOnly();
 		Date createTime = new Date(System.currentTimeMillis());
-		User user = new User("向阳test1", createTime);
+		Integer ad = userMapper.getMaxUserId();
+		Integer id = ad+1;
+		User user = new User(id,"向阳test1", createTime);
 		userMapper.inserUser(user);
 		userMapper.getUsers();
-		userMapper.inserUser(user);
+//		userMapper.inserUser(user);
+//		HintManager.clear();
 //		ExecutorService executor = Executors.newFixedThreadPool(2);
 //		CompletableFuture<List<String>> future1 = CompletableFuture.supplyAsync(new Supplier<List<String>>() {
 //
@@ -58,7 +61,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> getSlave() {
-		List<User> users = userMapper.getUsers();
+		List<User> users = userMapper.getUsers2();
 		return users;
 	}
 
