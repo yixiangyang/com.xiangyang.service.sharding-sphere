@@ -1,5 +1,7 @@
 package com.yixiangyang.service.impl;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,8 +12,11 @@ import java.util.function.Supplier;
 
 import javax.annotation.Resource;
 
+import com.yixiangyang.mapper.EmployeeMapper;
+import com.yixiangyang.model.Employee;
 import org.apache.shardingsphere.api.hint.HintManager;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.yixiangyang.mapper.UserMapper;
 import com.yixiangyang.model.EmpLogin;
@@ -21,16 +26,17 @@ import com.yixiangyang.service.UserService;
 public class UserServiceImpl implements UserService{
 	@Resource
 	private UserMapper userMapper;
-
+	@Resource
+	private EmployeeMapper employeeMapper;
 	@Override
-	public void addUser() {
+	public void addUser(User user) {
 //		HintManager.getInstance().setMasterRouteOnly();
 		Date createTime = new Date(System.currentTimeMillis());
-		Integer ad = userMapper.getMaxUserId();
-		Integer id = ad+1;
-		User user = new User(id,"向阳test1", createTime);
+//		Integer ad = userMapper.getMaxUserId();
+//		Integer id = ad+1;
+//		User user = new User(id,"向阳test1", createTime);
 		userMapper.inserUser(user);
-		userMapper.getUsers();
+//		userMapper.getUsers();
 //		userMapper.inserUser(user);
 //		HintManager.clear();
 //		ExecutorService executor = Executors.newFixedThreadPool(2);
@@ -63,6 +69,11 @@ public class UserServiceImpl implements UserService{
 	public List<User> getSlave() {
 		List<User> users = userMapper.getUsers2();
 		return users;
+	}
+
+	@Override
+	public void addEmployee(Employee employee) {
+		employeeMapper.inserEmployee(employee);
 	}
 
 }

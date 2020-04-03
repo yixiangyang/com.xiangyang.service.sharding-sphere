@@ -23,7 +23,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/v1/aa",method = RequestMethod.GET)
 	public String getTest(){
-		userService.addUser();
+//		userService.addUser();
 		return "aaa";
 	}
 	
