@@ -37,7 +37,7 @@ public class ApplicationTests {
 	}
 	@Test
 	public void addEmployee1 (){
-		for(int i=50003;i<50020;i++){
+		for(int i=50020;i<50025;i++){
 			System.out.println(i);
 			Date createTime = new Date(System.currentTimeMillis());
 			userService.addUser(new User(i,"test"+i,createTime));

@@ -37,7 +37,7 @@ public class OrderShardingAlgorithm implements PreciseShardingAlgorithm<Integer>
 			a ++;
 		}
 		if(shardingValue.getValue()>50000){
-			return "xiangyang2.user0";
+			return "user0";
 		}
 
 //		Integer a =(Integer.valueOf(String.valueOf(shardingValue.getValue())) %2);
