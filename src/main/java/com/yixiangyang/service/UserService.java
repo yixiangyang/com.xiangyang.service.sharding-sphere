@@ -13,4 +13,6 @@ public interface UserService {
 	public List<User> getSlave();
 
 	public void addEmployee(Employee employee);
+
+	public void addUser();
 }

@@ -16,6 +16,7 @@ import com.yixiangyang.mapper.EmployeeMapper;
 import com.yixiangyang.model.Employee;
 import org.apache.shardingsphere.api.hint.HintManager;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.yixiangyang.mapper.UserMapper;
@@ -74,6 +75,17 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void addEmployee(Employee employee) {
 		employeeMapper.inserEmployee(employee);
+	}
+
+	@Override
+	@Transactional
+	public void addUser() {
+		Date createTime = new Date(System.currentTimeMillis());
+		User user1 = new User(101,"这个是测试回滚",createTime);
+		userMapper.inserUser(user1);
+		User user2 = new User(50026,"这个是测试回滚",createTime);
+		userMapper.inserUser(user2);
+
 	}
 
 }
