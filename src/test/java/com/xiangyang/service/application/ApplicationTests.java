@@ -117,7 +117,7 @@ public class ApplicationTests {
 	public void aaa(){
 		Date createTime = new Date(System.currentTimeMillis());
 		System.out.println(DateUtils.formatDate(createTime,"yyyy-mm-dd HH:mm:ss"));
-		userMapper.inserUser(new User(21,"测试1",createTime));
+		userMapper.inserUser(new User(10,"测试1",createTime));
 	}
 
 	public static void main(String[] args) {

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(exclude = {SpringBootConfiguration.class,DataSourceAutoConfiguration.class})
+@SpringBootApplication(exclude = {SpringBootConfiguration.class})
 
 @ComponentScan(basePackages = { "com.yixiangyang.controller", "com.yixiangyang.service","com.yixiangyang.**"})
 @MapperScan(basePackages= {"com.yixiangyang.mapper"})
