@@ -14,7 +14,9 @@ import javax.annotation.Resource;
 
 import com.yixiangyang.mapper.EmployeeMapper;
 import com.yixiangyang.model.Employee;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.shardingsphere.api.hint.HintManager;
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,11 +26,14 @@ import com.yixiangyang.model.EmpLogin;
 import com.yixiangyang.model.User;
 import com.yixiangyang.service.UserService;
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl  implements UserService{
 	@Resource
 	private UserMapper userMapper;
 	@Resource
 	private EmployeeMapper employeeMapper;
+
+
+
 	@Override
 	public void addUser(User user) {
 //		HintManager.getInstance().setMasterRouteOnly();

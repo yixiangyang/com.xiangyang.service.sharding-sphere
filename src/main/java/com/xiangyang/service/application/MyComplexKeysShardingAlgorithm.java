@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Collection;
 import java.util.HashSet;
-@Configuration
+//@Configuration
 public class MyComplexKeysShardingAlgorithm implements PreciseShardingAlgorithm<Long> {
 
 

@@ -1,4 +1,4 @@
-package com.xiangyang.service.shardingsphere.com.xiangyang.service.shardingsphere;
+package com.xiangyang.service.application;
 
 import com.xiangyang.service.application.*;
 import com.yixiangyang.mapper.UserMapper;
@@ -115,15 +115,19 @@ public class ApplicationTests {
 	@Test
 	public void aaa(){
 		Date createTime = new Date(System.currentTimeMillis());
-		userMapper.inserUser(new User(50001,"测试1",createTime));
+		userMapper.inserUser(new User(5000,"测试1",createTime));
 	}
 
-	public static void main(String[] args) throws SQLException {
-		HikariDataSource dataSource1 = new HikariDataSource();
-		dataSource1.setUsername("root");
-		dataSource1.setPassword("xiangyang123");
-		dataSource1.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource1.setJdbcUrl("jdbc:mysql://121.41.56.97:3317/xiangyang1?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false");
-		System.out.println("aaaaaaaaaaaaaaaaaaa:"+dataSource1.getConnection());
+	public static void main(String[] args) {
+		System.out.println(5000%2);
 	}
+
+//	public static void main(String[] args) throws SQLException {
+//		DruidDataSource dataSource1 = new DruidDataSource();
+//		dataSource1.setUsername("root");
+//		dataSource1.setPassword("xiangyang123");
+//		dataSource1.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//		dataSource1.setUrl("jdbc:mysql://121.41.56.97:3317/xiangyang1?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false");
+//		System.out.println("aaaaaaaaaaaaaaaaaaa:"+dataSource1.getConnection());
+//	}
 }

@@ -7,7 +7,7 @@ import org.apache.shardingsphere.api.sharding.standard.RangeShardingValue;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.Collection;
-@Configuration
+//@Configuration
 public class MyRangeShardingAlgorithm implements PreciseShardingAlgorithm {
 
     @Override
