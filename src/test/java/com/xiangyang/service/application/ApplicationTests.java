@@ -6,6 +6,7 @@ import com.yixiangyang.model.Employee;
 import com.yixiangyang.model.User;
 import com.yixiangyang.service.UserService;
 import com.zaxxer.hikari.HikariDataSource;
+import org.apache.http.client.utils.DateUtils;
 import org.apache.shardingsphere.api.config.sharding.ShardingRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.TableRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStrategyConfiguration;
@@ -115,7 +116,8 @@ public class ApplicationTests {
 	@Test
 	public void aaa(){
 		Date createTime = new Date(System.currentTimeMillis());
-		userMapper.inserUser(new User(5000,"测试1",createTime));
+		System.out.println(DateUtils.formatDate(createTime,"yyyy-mm-dd HH:mm:ss"));
+		userMapper.inserUser(new User(20,"测试1",createTime));
 	}
 
 	public static void main(String[] args) {

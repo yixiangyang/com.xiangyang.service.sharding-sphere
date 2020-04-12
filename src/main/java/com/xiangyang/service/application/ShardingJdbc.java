@@ -36,7 +36,7 @@ public class ShardingJdbc {
         dataSource1.setUsername("root");
         dataSource1.setPassword("xiangyang123");
         dataSource1.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource1.setJdbcUrl("jdbc:mysql://121.41.56.97:3317/xiangyang1?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false");
+        dataSource1.setJdbcUrl("jdbc:mysql://121.41.56.97:3317/xiangyang1?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false");
         dataSourceMap.put("xiangyang1", dataSource1);
 
         // 配置第二个数据源
@@ -44,14 +44,14 @@ public class ShardingJdbc {
         dataSource2.setUsername("root");
         dataSource2.setPassword("xiangyang123");
         dataSource2.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource2.setJdbcUrl("jdbc:mysql://121.41.56.97:3317/xiangyang2?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false");
+        dataSource2.setJdbcUrl("jdbc:mysql://121.41.56.97:3317/xiangyang2?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false");
         dataSourceMap.put("xiangyang2", dataSource2);
 
         HikariDataSource dataSource0= new HikariDataSource();
         dataSource0.setUsername("root");
         dataSource0.setPassword("xiangyang123");
         dataSource0.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource0.setJdbcUrl("jdbc:mysql://121.41.56.97:3317/xiangyang0?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false");
+        dataSource0.setJdbcUrl("jdbc:mysql://121.41.56.97:3317/xiangyang0?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false");
         dataSourceMap.put("xiangyang0", dataSource0);
     System.out.println("aaaaaaaaa"+dataSourceMap.toString());
         // 配置Order表规则
