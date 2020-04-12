@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Properties;
 
 @Configuration
-@MapperScan(basePackages= {"com.yixiangyang.mapper"},sqlSessionFactoryRef="sqlSessionFactoryCsp")
+//@MapperScan(basePackages= {"com.yixiangyang.mapper"},sqlSessionFactoryRef="sqlSessionFactoryCsp")
 public class ShardingJdbc {
     public static void main(String[] args) {
         System.out.println(50001 %2 );
@@ -75,17 +75,17 @@ public class ShardingJdbc {
         return dataSource;
     }
 
-    @Bean("sqlSessionFactoryCsp")
-    public SqlSessionFactoryBean createSqlSessionFactoryBean(@Qualifier("shardingDataSource") DataSource dataSource){
-        SqlSessionFactoryBean sessionFactoryBean=new SqlSessionFactoryBean();
-        System.out.println("这个是11111111"+dataSource.toString());
-        sessionFactoryBean.setDataSource(dataSource);
-        return sessionFactoryBean;
-    }
-
-    @Bean(name = "platformTransactionManagerCsp")
-    public PlatformTransactionManager createPlatformTransactionManager(@Qualifier("shardingDataSource") DataSource dataSource) {
-        System.out.println("这个是222222222222"+dataSource.toString());
-        return new DataSourceTransactionManager(dataSource);
-    }
+//    @Bean("sqlSessionFactoryCsp")
+//    public SqlSessionFactoryBean createSqlSessionFactoryBean(@Qualifier("shardingDataSource") DataSource dataSource){
+//        SqlSessionFactoryBean sessionFactoryBean=new SqlSessionFactoryBean();
+//        System.out.println("这个是11111111"+dataSource.toString());
+//        sessionFactoryBean.setDataSource(dataSource);
+//        return sessionFactoryBean;
+//    }
+//
+//    @Bean(name = "platformTransactionManagerCsp")
+//    public PlatformTransactionManager createPlatformTransactionManager(@Qualifier("shardingDataSource") DataSource dataSource) {
+//        System.out.println("这个是222222222222"+dataSource.toString());
+//        return new DataSourceTransactionManager(dataSource);
+//    }
 }
